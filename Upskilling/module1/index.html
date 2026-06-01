@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Local Community Event Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1 style="color:red;">
+    Local Community Event Portal
+</h1>
+    <nav>
+        <a href="#home">Home</a> |
+        <a href="#events">Events</a> |
+        <a href="#contact">Contact</a> |
+        <a href="help.html" target="_blank">
+            Help
+        </a>
+    </nav>
+
+    <hr>
+
+    <div id="welcomeBanner">
+
+        Welcome to Community Portal
+
+        <span style="color:red;font-weight:bold;">
+            Special Offer Available
+        </span>
+
+    </div>
+
+    <p class="highlight">
+        Featured Community Event
+    </p>
+
+    <section id="home">
+
+        <h2>Home</h2>
+
+        <p>
+            Welcome to our local community portal.
+        </p>
+
+    </section>
+
+   
+    <section id="events">
+
+        <h2>Community Event Gallery</h2>
+
+        <table border="1">
+
+            <caption>
+                Community Events
+            </caption>
+
+            <tr>
+
+                <td>
+                    <img
+                    class="gallery-image"
+                    src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Event1"
+                    title="Event 1"
+                    ondblclick="enlargeImage(this)">
+                </td>
+
+                <td>
+                    <img
+                    class="gallery-image"
+                    src="https://images.unsplash.com/photo-1683624328172-88fb24625ec1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Event2"
+                    title="Event 2"
+                    ondblclick="enlargeImage(this)">
+                </td>
+
+                <td>
+                    <img
+                    class="gallery-image"
+                    src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Event3"
+                    title="Event 3"
+                    ondblclick="enlargeImage(this)">
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+                    <img
+                    class="gallery-image"
+                    src="https://images.unsplash.com/photo-1640163561346-7778a2edf353?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGhhY2thdGhvbnxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Event4"
+                    title="Event 4"
+                    ondblclick="enlargeImage(this)">
+                </td>
+
+                <td>
+                    <img
+                    class="gallery-image"
+                    src="https://images.unsplash.com/photo-1582711012124-a56cf82307a0?q=80&w=2140&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Event5"
+                    title="Event 5"
+                    ondblclick="enlargeImage(this)">
+                </td>
+
+                <td>
+                    <img
+                    class="gallery-image"
+                    src="https://images.unsplash.com/photo-1632187989763-c9c620420b4d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2hvb3RpbmclMjBtb3ZpZXxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Event6"
+                    title="Event 6"
+                    ondblclick="enlargeImage(this)">
+                </td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+    <hr>
+
+   
+    <form id="registrationForm">
+
+        <h2>Event Registration</h2>
+
+        <input
+        type="text"
+        name="name"
+        placeholder="Enter Name"
+        required
+        autofocus>
+
+        <br><br>
+
+        <input
+        type="email"
+        name="email"
+        placeholder="Enter Email"
+        required>
+
+        <br><br>
+
+        <input
+        type="date"
+        required>
+
+        <br><br>
+
+        <select
+        id="eventType"
+        onchange="showFee(this.value)">
+
+            <option value="">
+                Select Event
+            </option>
+
+            <option value="Music">
+                Music
+            </option>
+
+            <option value="Technology">
+                Technology
+            </option>
+
+            <option value="Workshop">
+                Workshop
+            </option>
+
+        </select>
+
+        <p id="feeDisplay"></p>
+
+        <textarea
+        rows="4"
+        cols="30"
+        placeholder="Enter Message">
+        </textarea>
+
+        <br><br>
+
+        <button
+        type="submit"
+        onclick="showConfirmation()">
+            Register
+        </button>
+
+        <br><br>
+
+        <output id="outputMessage"></output>
+
+    </form>
+
+    <h2>Feedback</h2>
+
+    <input
+    type="text"
+    id="phone"
+    placeholder="Phone Number"
+    onblur="validatePhone()">
+
+    <p id="phoneMessage"></p>
+
+    <textarea
+    id="feedback"
+    rows="5"
+    cols="30"
+    onkeyup="countCharacters()"
+    placeholder="Enter Feedback">
+    </textarea>
+
+    <p id="charCount">
+        Characters : 0
+    </p>
+
+
+    <h2>Promo Video</h2>
+
+    <video
+    width="400"
+    controls
+    oncanplay="videoReady()">
+
+        <source
+        src="sample.mp4"
+        type="video/mp4">
+
+    </video>
+
+    <p id="videoStatus"></p>
+
+
+    <h2>User Preference</h2>
+
+    <select id="preferredEvent">
+
+        <option value="Music">
+            Music
+        </option>
+
+        <option value="Technology">
+            Technology
+        </option>
+
+        <option value="Workshop">
+            Workshop
+        </option>
+
+    </select>
+
+    <button onclick="savePreference()">
+        Save Preference
+    </button>
+
+    <button onclick="clearPreferences()">
+        Clear Preference
+    </button>
+
+    
+    <h2>Nearby Events</h2>
+
+    <button onclick="findLocation()">
+        Find Nearby Events
+    </button>
+
+    <p id="locationResult"></p>
+
+    <section id="contact">
+
+        <h2>Contact</h2>
+
+        <p>
+            support@communityportal.com
+        </p>
+
+    </section>
+
+  
+    <footer>
+
+        <hr>
+
+        <p>
+            Local Community Event Portal
+        </p>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="main.js"></script>
+
+</body>
+
+</html>
